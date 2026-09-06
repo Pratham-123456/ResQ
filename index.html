@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>RESQ — Disaster Intelligence</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+        <div class="background">
+            <img id="mapImage" class="map-image" alt="" />
+
+            <div class="dark-overlay"></div>
+
+            <div class="grid"></div>
+
+            <div class="radar">
+                <div class="radar-line"></div>
+            </div>
+
+            <!-- =========================================================
+                 DISASTER VISUAL EFFECTS
+            ========================================================== -->
+            <canvas class="disaster-canvas" id="disasterCanvas" aria-hidden="true"></canvas>
+
+            <div class="disaster-effects" id="disasterEffects" aria-hidden="true">
+                <div class="tsunami-effect" id="tsunamiEffect">
+                    <div class="tsunami-wave wave-one"></div>
+                    <div class="tsunami-wave wave-two"></div>
+                    <div class="tsunami-wave wave-three"></div>
+                </div>
+
+                <div class="flood-effect" id="floodEffect">
+                    <div class="flood-water"></div>
+                    <div class="flood-surface"></div>
+                </div>
+
+                <div class="cyclone-effect" id="cycloneEffect">
+                    <div class="wind wind-1"></div>
+                    <div class="wind wind-2"></div>
+                    <div class="wind wind-3"></div>
+                    <div class="wind wind-4"></div>
+                    <div class="wind wind-5"></div>
+                    <div class="wind wind-6"></div>
+                    <div class="wind wind-7"></div>
+                    <div class="wind wind-8"></div>
+                </div>
+
+                <div class="earthquake-effect" id="earthquakeEffect">
+                    <div class="crack crack-1"></div>
+                    <div class="crack crack-2"></div>
+                    <div class="crack crack-3"></div>
+                    <div class="crack crack-4"></div>
+                    <div class="crack crack-5"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-mark">
+                    <span></span>
+                </div>
+
+                <span class="logo-text"> RESQ </span>
+            </div>
+
+            <div class="nav-center">DISASTER INTELLIGENCE PLATFORM</div>
+
+            <div class="nav-actions">
+                <div class="nav-status">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+                    <span class="theme-icon moon-icon" aria-hidden="true">☾</span>
+                    <span class="theme-icon sun-icon" aria-hidden="true">☼</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- =========================================================
+     COORDINATES
+========================================================= -->
+
+        <div class="coordinates">
+            <div id="coordinates">
+                13.0827° N<br />
+                80.2707° E
+            </div>
+
+            <div class="coordinate-label">SELECTED LOCATION</div>
+        </div>
+
+        <!-- =========================================================
+     CROSSHAIR
+========================================================= -->
+
+        <div class="crosshair">
+            <div class="crosshair-ring"></div>
+        </div>
+
+        <!-- =========================================================
+     HERO
+========================================================= -->
+
+        <main class="hero">
+            <div class="eyebrow">
+                <span class="eyebrow-line"></span>
+
+                NEXT-GENERATION EMERGENCY SIMULATION
+            </div>
+
+            <h1>
+                <span>SEE.</span>
+
+                <span class="outline"> SIMULATE. </span>
+
+                <span>RESPOND.</span>
+            </h1>
+
+            <p class="description">
+                RESQ transforms disaster scenarios into dynamic simulations —
+                revealing impact, risk, and the decisions that matter before
+                it's too late.
+            </p>
+
+            <div class="hero-meta">
+                <span> REAL-TIME SIMULATION </span>
+
+                <span class="meta-divider"></span>
+
+                <span> AI-ASSISTED RESPONSE </span>
+            </div>
+        </main>
+
+        <!-- =========================================================
+     CONTROL PANEL
+========================================================= -->
+
+        <section class="control-panel">
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">SIMULATION PARAMETERS</div>
+
+                    <div class="panel-subtitle">Configure your scenario</div>
+                </div>
+
+                <div class="panel-index">01 / 02</div>
+            </div>
+
+            <!-- =====================================================
+         COUNTRY
+    ====================================================== -->
+
+            <div class="field">
+                <label> COUNTRY </label>
+
+                <div class="search-wrapper" id="countryWrapper">
+                    <span class="search-icon"> ⌕ </span>
+
+                    <input
+                        id="countryInput"
+                        type="text"
+                        placeholder="Search country..."
+                        autocomplete="off"
+                        spellcheck="false" />
+
+                    <span class="clear-button" id="countryClear"> × </span>
+                </div>
+
+                <div class="search-results" id="countryResults"></div>
+            </div>
+
+            <!-- =====================================================
+         CITY
+    ====================================================== -->
+
+            <div class="field">
+                <label> CITY </label>
+
+                <div class="search-wrapper disabled" id="cityWrapper">
+                    <span class="search-icon"> ⌖ </span>
+
+                    <input
+                        id="cityInput"
+                        type="text"
+                        placeholder="Select country first..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        disabled />
+
+                    <span class="clear-button" id="cityClear"> × </span>
+                </div>
+
+                <div class="search-results" id="cityResults"></div>
+            </div>
+
+            <!-- =====================================================
+         SELECTED LOCATION
+    ====================================================== -->
+
+            <div class="selected-location" id="selectedLocation">
+                <div class="location-status">
+                    <span class="location-dot"></span>
+
+                    LOCATION READY
+                </div>
+
+                <div class="location-name" id="locationName">
+                    Chennai, India
+                </div>
+            </div>
+
+            <!-- =====================================================
+         DISASTER
+    ====================================================== -->
+
+            <div class="field">
+                <label> DISASTER SCENARIO </label>
+
+                <div class="select-wrapper">
+                    <select id="disasterSelect">
+                        <option value="tsunami">Tsunami</option>
+                        <option value="cyclone">Cyclone</option>
+                        <option value="earthquake">Earthquake</option>
+                        <option value="flood">Flood</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- =====================================================
+         LAUNCH
+    ====================================================== -->
+
+            <button class="launch-button" id="launchButton">
+                <span class="launch-content">
+                    <span> INITIALIZE SIMULATION </span>
+
+                    <span class="arrow"> → </span>
+                </span>
+            </button>
+
+            <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+            <div class="panel-footer">
+                <span> RESQ / CORE </span>
+
+                <span> v1.0.0 </span>
+
+                <span> READY </span>
+            </div>
+        </section>
+
+        <!-- =========================================================
+     BOTTOM
+========================================================= -->
+
+        <div class="bottom-left">
+            <span> LAT / LON </span>
+
+            <span class="mini-line"></span>
+
+            <span> LIVE GEOCODING </span>
+        </div>
+
+        <div class="scroll-indicator">RESQ / COMMAND</div>
+
+        <!-- =========================================================
+     NOISE
+========================================================= -->
+
+        <div class="noise"></div>
+
+        <!-- =========================================================
+     TRANSITION
+========================================================= -->
+
+        <div class="transition" id="transition">
+            <div class="transition-inner">
+                <div class="transition-line"></div>
+
+                <div class="transition-text">INITIALIZING RESQ</div>
+
+                <div class="transition-location" id="transitionLocation">
+                    --
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESQ — Command Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- MapLibre GL JS -->
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+    <!-- Theme & Auth Pre-check (No Flash) -->
+    <script>
+        (function() {
+            const rawSim = localStorage.getItem("resqSimulation");
+            if (!rawSim) {
+                window.location.href = "index.html";
+                return;
+            }
+            if (localStorage.getItem("resq-theme") === "light") {
+                document.documentElement.classList.add("light-mode");
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <!-- Background Texture -->
+    <div class="background" aria-hidden="true">
+        <div class="grid"></div>
+        <div class="radar">
+            <div class="radar-line"></div>
+        </div>
+        <div class="noise"></div>
+    </div>
+
+    <!-- Top Command Navigation Bar -->
+    <header class="dash-navbar">
+        <div class="nav-brand">
+            <a href="index.html" class="logo" title="Return to Scenario Launcher">
+                <div class="logo-mark"><span></span></div>
+                <span class="logo-text">RESQ</span>
+            </a>
+            <span class="brand-divider">/</span>
+            <span class="dash-badge">COMMAND CENTER</span>
+        </div>
+
+        <div class="nav-scenario" id="navScenarioChip">
+            <span class="pulse-indicator"></span>
+            <span class="scenario-location" id="scenarioLocation">--</span>
+            <span class="scenario-separator">•</span>
+            <span class="scenario-type" id="scenarioDisaster">--</span>
+            <span class="scenario-tag" id="scenarioSeverityTag">SEV 2.8</span>
+        </div>
+
+        <div class="nav-tools">
+            <div class="sim-controls">
+                <button class="tool-btn" id="btnPlayPause" type="button" title="Pause or Resume Simulation">
+                    <span class="btn-icon" id="playPauseIcon">⏸</span>
+                    <span class="btn-text" id="playPauseText">PAUSE</span>
+                </button>
+                <div class="speed-group" role="group" aria-label="Simulation Speed">
+                    <button class="speed-btn active" data-speed="1" type="button">1x</button>
+                    <button class="speed-btn" data-speed="2" type="button">2x</button>
+                    <button class="speed-btn" data-speed="5" type="button">5x</button>
+                </div>
+                <button class="tool-btn reset-btn" id="btnReset" type="button" title="Reset Simulation Timeline">
+                    <span class="btn-icon">↺</span>
+                    <span class="btn-text">RESET</span>
+                </button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">
+                    <span class="theme-icon moon-icon" aria-hidden="true">☾</span>
+                    <span class="theme-icon sun-icon" aria-hidden="true">☼</span>
+                </button>
+                <a href="index.html" class="nav-exit" title="Exit to Scenario Setup">
+                    <span>← EXIT</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Top Tab Switcher (Visible only under 900px) -->
+    <div class="mobile-tabs" id="mobileTabs">
+        <button class="mobile-tab-btn active" id="tabMapBtn" type="button">
+            <span>🗺️ MAP VIEW</span>
+        </button>
+        <button class="mobile-tab-btn" id="tabPropsBtn" type="button">
+            <span>⚡ DISASTER PROPERTIES</span>
+        </button>
+    </div>
+
+    <!-- Main Dashboard Workspace (3 Resizable Panels) -->
+    <main class="dashboard-workspace" id="dashboardWorkspace">
+        <!-- Top Workspace Area (Map + Vertical Splitter + Overview) -->
+        <div class="workspace-top" id="workspaceTop">
+            
+            <!-- 1. MAP PANEL (Left) -->
+            <section class="dashboard-panel map-panel" id="mapPanel">
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">GEOSPATIAL SITUATION MATRIX</div>
+                        <div class="panel-subtitle">MapLibre 3D Vector Engine · 45° Perspective View</div>
+                    </div>
+                    <div class="panel-tag" id="mapPitchTag">45° PITCH · 3D BUILDINGS</div>
+                </div>
+
+                <!-- Layer Toggles Overlay HUD -->
+                <div class="map-hud-layers" id="mapHudLayers">
+                    <button class="layer-pill active" data-layer="roads" type="button">
+                        <span class="legend-indicator red-line"></span> BLOCKED ROADS
+                    </button>
+                    <button class="layer-pill active" data-layer="evac" type="button">
+                        <span class="legend-indicator green-line"></span> EVAC ROUTES
+                    </button>
+                    <button class="layer-pill active" data-layer="hazard" type="button">
+                        <span class="legend-indicator yellow-box"></span> HAZARD ZONE
+                    </button>
+                    <button class="layer-pill active" data-layer="hospitals" type="button">
+                        <span class="legend-indicator blue-dot"></span> HOSPITALS
+                    </button>
+                    <button class="layer-pill active" data-layer="shelters" type="button">
+                        <span class="legend-indicator green-dot"></span> SHELTERS
+                    </button>
+                    <button class="layer-pill active" data-layer="outages" type="button">
+                        <span class="legend-indicator amber-dot"></span> OUTAGES
+                    </button>
+                </div>
+
+                <!-- Live MapLibre Container -->
+                <div class="map-container" id="mapContainer"></div>
+
+                <!-- Bottom Telemetry Ribbon -->
+                <div class="map-telemetry-bar">
+                    <div class="telemetry-item">
+                        <span class="telem-label">COORDINATES</span>
+                        <span class="telem-val" id="mapCoordsReadout">--° N / --° E</span>
+                    </div>
+                    <div class="telemetry-item">
+                        <span class="telem-label">ZOOM LEVEL</span>
+                        <span class="telem-val" id="mapZoomReadout">14.50</span>
+                    </div>
+                    <div class="telemetry-item">
+                        <span class="telem-label">ACTIVE HAZARD RADIUS</span>
+                        <span class="telem-val" id="mapRadiusReadout">4.2 km</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vertical Resizer Splitter -->
+            <div class="resizer resizer-v" id="resizerV" title="Drag horizontally to resize panels"></div>
+
+            <!-- 2. OVERVIEW PANEL (Right) -->
+            <section class="dashboard-panel overview-panel" id="overviewPanel">
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">SITUATION OVERVIEW & AI BRIEFING</div>
+                        <div class="panel-subtitle">Real-Time Metric Aggregation & Action Directives</div>
+                    </div>
+                    <div class="panel-index">02 / 03</div>
+                </div>
+
+                <!-- Real-Time Metrics Counters Grid -->
+                <div class="metrics-grid">
+                    <!-- Metric: Affected People -->
+                    <div class="metric-card metric-critical">
+                        <div class="metric-label">AFFECTED POPULATION</div>
+                        <div class="metric-value-row">
+                            <span class="metric-value" id="counterAffected">0</span>
+                            <span class="metric-delta" id="deltaAffected">↑ 4.2%</span>
+                        </div>
+                        <div class="metric-footer">IN PRIMARY HAZARD ENVELOPE</div>
+                    </div>
+
+                    <!-- Metric: Hospitals Available vs Full -->
+                    <div class="metric-card metric-hospital">
+                        <div class="metric-label">HOSPITAL TRIAGE STATUS</div>
+                        <div class="metric-split-row">
+                            <div class="split-stat">
+                                <span class="split-val stat-available" id="counterHospAvail">0</span>
+                                <span class="split-sub">AVAILABLE</span>
+                            </div>
+                            <span class="split-divider">/</span>
+                            <div class="split-stat">
+                                <span class="split-val stat-full" id="counterHospFull">0</span>
+                                <span class="split-sub">CAPACITY FULL</span>
+                            </div>
+                        </div>
+                        <div class="metric-footer" id="hospBarTrack">
+                            <div class="capacity-bar">
+                                <div class="capacity-fill" id="hospCapacityFill" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metric: Blocked Roads -->
+                    <div class="metric-card metric-blocked">
+                        <div class="metric-label">BLOCKED ARTERIAL ROADS</div>
+                        <div class="metric-value-row">
+                            <span class="metric-value text-danger" id="counterBlockedRoads">0</span>
+                            <span class="metric-badge-red">OBSTRUCTED</span>
+                        </div>
+                        <div class="metric-footer">DEBRIS & STRUCTURAL FAILURE</div>
+                    </div>
+
+                    <!-- Metric: Active Shelters -->
+                    <div class="metric-card metric-shelter">
+                        <div class="metric-label">ACTIVE REFUGE SHELTERS</div>
+                        <div class="metric-value-row">
+                            <span class="metric-value text-safe" id="counterShelters">0</span>
+                            <span class="metric-badge-green">OPERATIONAL</span>
+                        </div>
+                        <div class="metric-footer">PROVIDING EMERGENCY SUBSISTENCE</div>
+                    </div>
+
+                    <!-- Metric: Power Outages -->
+                    <div class="metric-card metric-outage">
+                        <div class="metric-label">POWER GRID OUTAGES</div>
+                        <div class="metric-value-row">
+                            <span class="metric-value text-amber" id="counterOutages">0</span>
+                            <span class="metric-badge-amber">SUB-STATIONS DOWN</span>
+                        </div>
+                        <div class="metric-footer">DISTRICT TRANSFORMERS DE-ENERGIZED</div>
+                    </div>
+                </div>
+
+                <!-- AI Response Readout Card -->
+                <div class="ai-response-card" id="aiResponseBlock">
+                    <div class="ai-header">
+                        <div class="ai-title-group">
+                            <span class="ai-sparkle">✦</span>
+                            <span class="ai-title">AI SITUATION SYNTHESIS</span>
+                        </div>
+                        <div class="ai-status-chip">
+                            <span class="ai-chip-dot"></span>
+                            <span id="aiTimestamp">LIVE DIRECTIVE</span>
+                        </div>
+                    </div>
+
+                    <!-- 1. Situation Summary -->
+                    <div class="ai-section">
+                        <div class="ai-section-label">01 // INCIDENT SYNTHESIS</div>
+                        <p class="ai-text" id="aiSummaryText">
+                            Initializing neural crisis synthesis and aggregating municipal telemetry feeds...
+                        </p>
+                    </div>
+
+                    <!-- 2. Actionable Evacuation Guidance -->
+                    <div class="ai-section">
+                        <div class="ai-section-label">02 // EVACUATION GUIDANCE & LOGISTICS</div>
+                        <p class="ai-text ai-guidance-text" id="aiGuidanceText">
+                            Calculating high-clearance transit corridors and safe relief shelter routing...
+                        </p>
+                    </div>
+
+                    <div class="ai-footer">
+                        <span>RESQ / NEURAL · MODEL: DISASTER-GPT-v2</span>
+                        <span class="ai-confidence">HIGH CONFIDENCE</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Horizontal Resizer Splitter -->
+        <div class="resizer resizer-h" id="resizerH" title="Drag vertically to resize properties panel"></div>
+
+        <!-- 3. DISASTER PROPERTIES PANEL (Bottom) -->
+        <section class="dashboard-panel properties-panel" id="propertiesPanel">
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+
+            <div class="properties-inner">
+                <div class="properties-header">
+                    <div>
+                        <div class="panel-title">DISASTER DYNAMICS & TELEMETRY CONTROLS</div>
+                        <div class="panel-subtitle" id="propsDisasterSubtitle">Live Variable Adjustment</div>
+                    </div>
+                    <div class="severity-monitor">
+                        <span class="sev-monitor-label">SIMULATED SEVERITY:</span>
+                        <span class="sev-monitor-val" id="sevValueBadge">2.8 / 5.0</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Properties Control List -->
+                <div class="properties-grid" id="propertiesGrid">
+                    <!-- Populated dynamically based on active disaster schema -->
+                </div>
+
+                <!-- Action Strip -->
+                <div class="properties-actions">
+                    <button class="launch-button prop-action-btn" id="btnEscalate" type="button">
+                        <span class="launch-content">
+                            <span>ESCALATE INTENSITY (+0.5)</span>
+                            <span class="arrow">⚡</span>
+                        </span>
+                    </button>
+                    <button class="launch-button prop-action-btn btn-secondary" id="btnMitigate" type="button">
+                        <span class="launch-content">
+                            <span>MITIGATE / RELIEF EFFECT</span>
+                            <span class="arrow">🛡</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Core Scripts (Data Rules -> Engine -> Dashboard Orchestration) -->
+    <script src="data/disaster-rules.js"></script>
+    <script src="simulation-engine.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

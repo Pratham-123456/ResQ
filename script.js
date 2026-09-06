@@ -1376,18 +1376,23 @@ disasterSelect.addEventListener("keydown", (event) => {
 ============================================================ */
 const themeToggle = document.getElementById("themeToggle");
 const savedTheme = localStorage.getItem("resq-theme");
-if (savedTheme === "light") document.body.classList.add("light-mode");
+if (savedTheme === "light") {
+    document.documentElement.classList.add("light-mode");
+    document.body.classList.add("light-mode");
+}
 
 function syncThemeIcon() {
     if (!themeToggle) return;
-    const light = document.body.classList.contains("light-mode");
+    const light = document.body.classList.contains("light-mode") || document.documentElement.classList.contains("light-mode");
     themeToggle.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
     themeToggle.setAttribute("title", light ? "Switch to dark mode" : "Switch to light mode");
 }
 
 themeToggle?.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    localStorage.setItem("resq-theme", document.body.classList.contains("light-mode") ? "light" : "dark");
+    const willBeLight = !(document.body.classList.contains("light-mode") || document.documentElement.classList.contains("light-mode"));
+    document.documentElement.classList.toggle("light-mode", willBeLight);
+    document.body.classList.toggle("light-mode", willBeLight);
+    localStorage.setItem("resq-theme", willBeLight ? "light" : "dark");
     syncThemeIcon();
 });
 syncThemeIcon();

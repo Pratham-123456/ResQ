@@ -121,6 +121,10 @@
 
     function syncTheme() {
         const light = isLightMode();
+        if (light) {
+            document.documentElement.classList.add("light-mode");
+            document.body.classList.add("light-mode");
+        }
         themeToggle?.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
         themeToggle?.setAttribute("title", light ? "Switch to dark mode" : "Switch to light mode");
     }

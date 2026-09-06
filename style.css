@@ -2277,41 +2277,164 @@ body.light-mode .grid {
 body.light-mode .navbar,
 body.light-mode .coordinates,
 body.light-mode .hero,
-body.light-mode .bottom-bar { color: #11161a; }
-body.light-mode .theme-toggle {
+body.light-mode .bottom-bar,
+html.light-mode .bottom-bar { color: #11161a; }
+
+body.light-mode .theme-toggle,
+html.light-mode .theme-toggle {
     color: #182026;
-    background: rgba(255,255,255,.55);
-    border-color: rgba(20,28,34,.18);
+    background: rgba(255,255,255,.75);
+    border-color: rgba(20,28,34,.22);
 }
-body.light-mode .moon-icon { opacity: 0; transform: rotate(45deg) scale(.65); }
-body.light-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
-body.light-mode .control-panel {
-    background: linear-gradient(145deg, rgba(255,255,255,.68), rgba(255,255,255,.34));
+body.light-mode .moon-icon,
+html.light-mode .moon-icon { opacity: 0; transform: rotate(45deg) scale(.65); }
+body.light-mode .sun-icon,
+html.light-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
+
+body.light-mode .control-panel,
+html.light-mode .control-panel {
+    background: linear-gradient(145deg, rgba(255,255,255,.82), rgba(255,255,255,.55));
     border-color: rgba(20,28,34,.16);
     box-shadow: 0 30px 90px rgba(50,60,68,.18), inset 0 1px rgba(255,255,255,.75);
     color: #182026;
 }
-body.light-mode .control-panel input,
-body.light-mode .control-panel select {
-    color: #182026;
-    background: rgba(255,255,255,.5);
-    border-color: rgba(20,28,34,.14);
+
+body.light-mode .panel-title,
+html.light-mode .panel-title {
+    color: #11161a;
+    font-weight: 600;
 }
 body.light-mode .panel-subtitle,
-body.light-mode .field label,
+html.light-mode .panel-subtitle {
+    color: rgba(24,32,38,.72);
+}
 body.light-mode .panel-index,
+html.light-mode .panel-index {
+    color: rgba(24,32,38,.72);
+    font-weight: 500;
+}
+body.light-mode .field label,
+html.light-mode .field label {
+    color: rgba(24,32,38,.75);
+    font-weight: 500;
+}
 body.light-mode .panel-footer,
-body.light-mode .description { color: rgba(24,32,38,.62); }
+body.light-mode .description,
+html.light-mode .panel-footer,
+html.light-mode .description {
+    color: rgba(24,32,38,.68);
+}
+
+body.light-mode .search-wrapper,
+html.light-mode .search-wrapper {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(20, 28, 34, 0.18);
+}
+body.light-mode .search-wrapper input,
+html.light-mode .search-wrapper input {
+    color: #11161a;
+    background: transparent;
+    border: none;
+}
+body.light-mode .search-wrapper input::placeholder,
+html.light-mode .search-wrapper input::placeholder {
+    color: rgba(24, 32, 38, 0.45);
+}
+body.light-mode .search-wrapper input:hover,
+html.light-mode .search-wrapper input:hover {
+    border-color: rgba(20, 28, 34, 0.32);
+}
+body.light-mode .search-wrapper input:focus,
+html.light-mode .search-wrapper input:focus {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(20, 28, 34, 0.45);
+    box-shadow: 0 0 0 3px rgba(20, 28, 34, 0.06);
+}
+body.light-mode .search-wrapper.disabled,
+html.light-mode .search-wrapper.disabled {
+    opacity: 0.65;
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(20, 28, 34, 0.12);
+}
+body.light-mode .search-wrapper.disabled input,
+html.light-mode .search-wrapper.disabled input {
+    color: rgba(24, 32, 38, 0.55);
+}
+body.light-mode .search-icon,
+html.light-mode .search-icon {
+    color: rgba(24, 32, 38, 0.5);
+}
+body.light-mode .clear-button,
+html.light-mode .clear-button {
+    color: rgba(24, 32, 38, 0.45);
+}
+body.light-mode .clear-button:hover,
+html.light-mode .clear-button:hover {
+    color: #11161a;
+}
+
+body.light-mode .select-wrapper,
+html.light-mode .select-wrapper {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(20, 28, 34, 0.18);
+}
+body.light-mode .select-wrapper select,
+html.light-mode .select-wrapper select {
+    color: #11161a;
+    background: transparent;
+    border: none;
+}
+body.light-mode .select-wrapper::after,
+html.light-mode .select-wrapper::after {
+    color: rgba(24, 32, 38, 0.55);
+}
+
+body.light-mode .selected-location,
+html.light-mode .selected-location {
+    border: 1px solid rgba(31, 107, 58, 0.32);
+    background: rgba(31, 107, 58, 0.08);
+}
+body.light-mode .location-status,
+html.light-mode .location-status {
+    color: #1f6b3a;
+    font-weight: 600;
+}
+body.light-mode .location-dot,
+html.light-mode .location-dot {
+    background: #1f6b3a;
+    box-shadow: 0 0 8px rgba(31, 107, 58, 0.45);
+}
+body.light-mode .location-name,
+html.light-mode .location-name {
+    color: #11161a;
+    font-weight: 600;
+}
+
+body.light-mode .corner::before,
+body.light-mode .corner::after,
+html.light-mode .corner::before,
+html.light-mode .corner::after {
+    background: rgba(20, 28, 34, 0.28);
+}
+
 body.light-mode .nav-status,
 body.light-mode .nav-center,
 body.light-mode .eyebrow,
 body.light-mode .coordinate-label,
-body.light-mode .hero-meta { color: rgba(24,32,38,.72); }
-body.light-mode .outline { color: transparent; -webkit-text-stroke: 1px rgba(24,32,38,.68); }
-body.light-mode .search-results {
-    background: rgba(247,249,250,.96);
-    border-color: rgba(20,28,34,.15);
+body.light-mode .hero-meta,
+html.light-mode .nav-status,
+html.light-mode .nav-center,
+html.light-mode .eyebrow,
+html.light-mode .coordinate-label,
+html.light-mode .hero-meta { color: rgba(24,32,38,.75); }
+body.light-mode .outline,
+html.light-mode .outline { color: transparent; -webkit-text-stroke: 1px rgba(24,32,38,.68); }
+body.light-mode .search-results,
+html.light-mode .search-results {
+    background: rgba(247,249,250,.98);
+    border-color: rgba(20,28,34,.18);
     color: #182026;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 1100px) {

@@ -104,7 +104,7 @@ button, input, select {
     opacity: 0.8;
 }
 
-body.light-mode .grid {
+html.light-mode .grid , body.light-mode .grid {
     background-image:
         linear-gradient(rgba(20, 28, 34, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(20, 28, 34, 0.05) 1px, transparent 1px);
@@ -122,7 +122,7 @@ body.light-mode .grid {
     opacity: 0.25;
 }
 
-body.light-mode .radar {
+html.light-mode .radar , body.light-mode .radar {
     border-color: rgba(20, 28, 34, 0.06);
 }
 
@@ -151,7 +151,7 @@ body.light-mode .radar {
     backdrop-filter: blur(20px);
 }
 
-body.light-mode .dash-navbar {
+html.light-mode .dash-navbar , body.light-mode .dash-navbar {
     background: rgba(238, 241, 243, 0.88);
 }
 
@@ -185,10 +185,10 @@ body.light-mode .dash-navbar {
     background: #fff;
 }
 
-body.light-mode .logo-mark {
+html.light-mode .logo-mark , body.light-mode .logo-mark {
     border-color: rgba(18, 25, 30, 0.82);
 }
-body.light-mode .logo-mark span {
+html.light-mode .logo-mark span , body.light-mode .logo-mark span {
     background: #182026;
 }
 
@@ -214,7 +214,7 @@ body.light-mode .logo-mark span {
     background: rgba(255, 255, 255, 0.04);
 }
 
-body.light-mode .dash-badge {
+html.light-mode .dash-badge , body.light-mode .dash-badge {
     background: rgba(20, 28, 34, 0.05);
 }
 
@@ -231,7 +231,7 @@ body.light-mode .dash-badge {
     letter-spacing: 0.14em;
 }
 
-body.light-mode .nav-scenario {
+html.light-mode .nav-scenario , body.light-mode .nav-scenario {
     background: rgba(255, 255, 255, 0.6);
 }
 
@@ -301,7 +301,7 @@ body.light-mode .nav-scenario {
     transition: 0.2s ease;
 }
 
-body.light-mode .tool-btn {
+html.light-mode .tool-btn , body.light-mode .tool-btn {
     background: rgba(255, 255, 255, 0.65);
 }
 
@@ -336,7 +336,7 @@ body.light-mode .tool-btn {
     background: rgba(255, 255, 255, 0.14);
 }
 
-body.light-mode .speed-btn.active {
+html.light-mode .speed-btn.active , body.light-mode .speed-btn.active {
     background: rgba(20, 28, 34, 0.12);
     color: #11161a;
 }
@@ -375,8 +375,8 @@ body.light-mode .speed-btn.active {
 .sun-icon { opacity: 0; transform: rotate(-45deg) scale(0.7); }
 .moon-icon { opacity: 1; transform: rotate(0) scale(1); }
 
-body.light-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
-body.light-mode .moon-icon { opacity: 0; transform: rotate(45deg) scale(0.7); }
+html.light-mode .sun-icon , body.light-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
+html.light-mode .moon-icon , body.light-mode .moon-icon { opacity: 0; transform: rotate(45deg) scale(0.7); }
 
 .nav-exit {
     padding: 6px 12px;
@@ -500,7 +500,7 @@ body.light-mode .moon-icon { opacity: 0; transform: rotate(45deg) scale(0.7); }
     flex-shrink: 0;
 }
 
-body.light-mode .panel-header {
+html.light-mode .panel-header , body.light-mode .panel-header {
     border-bottom-color: rgba(20, 28, 34, 0.06);
 }
 
@@ -605,7 +605,7 @@ body.light-mode .panel-header {
     background: #0d1115;
 }
 
-body.light-mode .map-container {
+html.light-mode .map-container , body.light-mode .map-container {
     background: #e1e6e9;
 }
 
@@ -638,7 +638,7 @@ body.light-mode .map-container {
     transition: 0.2s ease;
 }
 
-body.light-mode .layer-pill {
+html.light-mode .layer-pill , body.light-mode .layer-pill {
     background: rgba(247, 249, 250, 0.9);
 }
 
@@ -706,7 +706,7 @@ body.light-mode .layer-pill {
     backdrop-filter: blur(8px);
 }
 
-body.light-mode .map-telemetry-bar {
+html.light-mode .map-telemetry-bar , body.light-mode .map-telemetry-bar {
     background: rgba(238, 241, 243, 0.88);
 }
 
@@ -751,7 +751,7 @@ body.light-mode .map-telemetry-bar {
     color: #fff;
 }
 
-body.light-mode .marker-shelter {
+html.light-mode .marker-shelter , body.light-mode .marker-shelter {
     background: #1f6b3a;
 }
 
@@ -802,7 +802,7 @@ body.light-mode .marker-shelter {
     transition: border-color 0.25s ease;
 }
 
-body.light-mode .metric-card {
+html.light-mode .metric-card , body.light-mode .metric-card {
     background: rgba(255, 255, 255, 0.6);
     border-color: rgba(20, 28, 34, 0.1);
 }
@@ -939,7 +939,7 @@ body.light-mode .metric-card {
     overflow-y: auto;
 }
 
-body.light-mode .ai-response-card {
+html.light-mode .ai-response-card , body.light-mode .ai-response-card {
     background: rgba(255, 255, 255, 0.55);
     border-color: rgba(20, 28, 34, 0.12);
 }
@@ -952,7 +952,7 @@ body.light-mode .ai-response-card {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-body.light-mode .ai-header {
+html.light-mode .ai-header , body.light-mode .ai-header {
     border-bottom-color: rgba(20, 28, 34, 0.08);
 }
 
@@ -1020,7 +1020,7 @@ body.light-mode .ai-header {
     padding: 6px 10px;
 }
 
-body.light-mode .ai-guidance-text {
+html.light-mode .ai-guidance-text , body.light-mode .ai-guidance-text {
     background: rgba(31, 107, 58, 0.06);
     border-left-color: var(--color-ok);
 }
@@ -1038,7 +1038,7 @@ body.light-mode .ai-guidance-text {
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-body.light-mode .ai-footer {
+html.light-mode .ai-footer , body.light-mode .ai-footer {
     border-top-color: rgba(20, 28, 34, 0.06);
 }
 
@@ -1147,7 +1147,7 @@ body.light-mode .ai-footer {
     transition: background 0.2s;
 }
 
-body.light-mode .prop-slider {
+html.light-mode .prop-slider , body.light-mode .prop-slider {
     background: rgba(20, 28, 34, 0.15);
 }
 
@@ -1164,7 +1164,7 @@ body.light-mode .prop-slider {
     transition: transform 0.2s, background 0.2s;
 }
 
-body.light-mode .prop-slider::-webkit-slider-thumb {
+html.light-mode .prop-slider::-webkit-slider-thumb , body.light-mode .prop-slider::-webkit-slider-thumb {
     background: #11161a;
     border-color: #fff;
 }
@@ -1196,7 +1196,7 @@ body.light-mode .prop-slider::-webkit-slider-thumb {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-body.light-mode .prop-action-btn {
+html.light-mode .prop-action-btn , body.light-mode .prop-action-btn {
     background: #182026;
     color: #f4f5f6;
 }
@@ -1227,7 +1227,7 @@ body.light-mode .prop-action-btn {
     color: var(--text-primary);
 }
 
-body.light-mode .prop-action-btn.btn-secondary {
+html.light-mode .prop-action-btn.btn-secondary , body.light-mode .prop-action-btn.btn-secondary {
     background: rgba(20, 28, 34, 0.08);
     border-color: rgba(20, 28, 34, 0.18);
     color: #11161a;
@@ -1362,7 +1362,7 @@ body.light-mode .prop-action-btn.btn-secondary {
     margin-bottom: 8px;
 }
 
-body.light-mode .origin-control-bar {
+html.light-mode .origin-control-bar , body.light-mode .origin-control-bar {
     background: rgba(255, 255, 255, 0.55);
     border-color: rgba(20, 28, 34, 0.1);
 }
@@ -1452,3 +1452,507 @@ body.light-mode .origin-control-bar {
     transform: rotate(20deg);
 }
 
+
+
+/* ============================================================
+   11. LIGHT MODE DESIGN CALIBRATION & HIGH CONTRAST
+   Strict adherence to Phase 1 styling, readability, and contrast
+============================================================ */
+
+html.light-mode,
+body.light-mode {
+    --bg-surface: #eef1f3;
+    --text-primary: #11161a;
+    --text-secondary: rgba(24, 32, 38, 0.78);
+    --text-muted: rgba(24, 32, 38, 0.65);
+    
+    --panel-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+    --panel-border: rgba(20, 28, 34, 0.16);
+    --panel-inner-border: rgba(255, 255, 255, 0.95);
+    --corner-bracket-color: rgba(20, 28, 34, 0.35);
+    
+    /* Strict adherence: dark-green "ready/online" accent in light mode */
+    --color-ok: #1f6b3a;
+    --color-ok-bg: rgba(31, 107, 58, 0.12);
+    --color-ok-border: rgba(31, 107, 58, 0.35);
+    
+    --color-flood-light: #0284c7;
+    
+    --resizer-line: rgba(20, 28, 34, 0.14);
+    --resizer-hover: rgba(20, 28, 34, 0.45);
+}
+
+/* 11.1 Top Command Navigation Bar */
+html.light-mode .dash-navbar,
+body.light-mode .dash-navbar {
+    background: rgba(240, 243, 245, 0.94);
+    border-bottom: 1px solid rgba(20, 28, 34, 0.14);
+}
+
+html.light-mode .logo-text,
+body.light-mode .logo-text {
+    color: #11161a;
+}
+
+html.light-mode .logo-mark,
+body.light-mode .logo-mark {
+    border-color: rgba(18, 25, 30, 0.82);
+}
+
+html.light-mode .logo-mark span,
+body.light-mode .logo-mark span {
+    background: #182026;
+}
+
+html.light-mode .brand-divider,
+body.light-mode .brand-divider {
+    color: rgba(24, 32, 38, 0.4);
+}
+
+html.light-mode .dash-badge,
+body.light-mode .dash-badge {
+    background: rgba(20, 28, 34, 0.05);
+    border: 1px solid rgba(20, 28, 34, 0.16);
+    color: rgba(24, 32, 38, 0.78);
+    font-weight: 500;
+}
+
+html.light-mode .nav-scenario,
+body.light-mode .nav-scenario {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(20, 28, 34, 0.16);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+html.light-mode .scenario-location,
+body.light-mode .scenario-location {
+    color: #11161a;
+    font-weight: 600;
+}
+
+html.light-mode .scenario-separator,
+body.light-mode .scenario-separator {
+    color: rgba(24, 32, 38, 0.4);
+}
+
+html.light-mode .scenario-tag,
+body.light-mode .scenario-tag {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #b45309;
+    font-weight: 700;
+}
+
+html.light-mode .tool-btn,
+body.light-mode .tool-btn {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(20, 28, 34, 0.18);
+    color: #11161a;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+html.light-mode .tool-btn:hover,
+body.light-mode .tool-btn:hover {
+    background: #ffffff;
+    border-color: rgba(20, 28, 34, 0.35);
+}
+
+html.light-mode .start-sim-btn,
+body.light-mode .start-sim-btn {
+    background: linear-gradient(135deg, rgba(31, 107, 58, 0.18), rgba(31, 107, 58, 0.08)) !important;
+    border-color: rgba(31, 107, 58, 0.5) !important;
+    color: #1f6b3a !important;
+    font-weight: 700 !important;
+    box-shadow: 0 1px 6px rgba(31, 107, 58, 0.2);
+}
+
+html.light-mode .start-sim-btn:hover,
+body.light-mode .start-sim-btn:hover {
+    background: linear-gradient(135deg, rgba(31, 107, 58, 0.28), rgba(31, 107, 58, 0.14)) !important;
+    border-color: #1f6b3a !important;
+}
+
+html.light-mode .speed-group,
+body.light-mode .speed-group {
+    border: 1px solid rgba(20, 28, 34, 0.18);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+html.light-mode .speed-btn,
+body.light-mode .speed-btn {
+    background: rgba(255, 255, 255, 0.7);
+    color: rgba(24, 32, 38, 0.68);
+    border-right: 1px solid rgba(20, 28, 34, 0.16);
+}
+
+html.light-mode .speed-btn:hover,
+body.light-mode .speed-btn:hover {
+    background: #ffffff;
+    color: #11161a;
+}
+
+html.light-mode .speed-btn.active,
+body.light-mode .speed-btn.active {
+    background: rgba(20, 28, 34, 0.12);
+    color: #11161a;
+    font-weight: 700;
+}
+
+html.light-mode .theme-toggle,
+body.light-mode .theme-toggle {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(20, 28, 34, 0.18);
+    color: #182026;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+html.light-mode .theme-toggle:hover,
+body.light-mode .theme-toggle:hover {
+    background: #ffffff;
+    border-color: rgba(20, 28, 34, 0.35);
+}
+
+html.light-mode .sun-icon,
+body.light-mode .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
+html.light-mode .moon-icon,
+body.light-mode .moon-icon { opacity: 0; transform: rotate(45deg) scale(0.7); }
+
+html.light-mode .nav-exit,
+body.light-mode .nav-exit {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #dc2626;
+    font-weight: 600;
+}
+
+html.light-mode .nav-exit:hover,
+body.light-mode .nav-exit:hover {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: #dc2626;
+}
+
+/* 11.2 Panel Chrome & Headers */
+html.light-mode .panel-header,
+body.light-mode .panel-header {
+    border-bottom: 1px solid rgba(20, 28, 34, 0.08);
+}
+
+html.light-mode .panel-title,
+body.light-mode .panel-title {
+    color: #11161a;
+    font-weight: 600;
+}
+
+html.light-mode .panel-subtitle,
+body.light-mode .panel-subtitle {
+    color: rgba(24, 32, 38, 0.7);
+    font-weight: 400;
+}
+
+html.light-mode .panel-tag,
+html.light-mode .panel-index,
+body.light-mode .panel-tag,
+body.light-mode .panel-index {
+    color: rgba(24, 32, 38, 0.68);
+    font-weight: 500;
+}
+
+/* 11.3 Map Viewport, HUD & Telemetry Bar */
+html.light-mode .map-container,
+body.light-mode .map-container {
+    background: #e1e6e9;
+}
+
+html.light-mode .layer-pill,
+body.light-mode .layer-pill {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(20, 28, 34, 0.18);
+    color: #182026;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+html.light-mode .layer-pill:hover,
+body.light-mode .layer-pill:hover {
+    border-color: rgba(20, 28, 34, 0.35);
+}
+
+html.light-mode .layer-pill.active,
+body.light-mode .layer-pill.active {
+    border-color: rgba(20, 28, 34, 0.4);
+    color: #11161a;
+    font-weight: 600;
+}
+
+html.light-mode .map-telemetry-bar,
+body.light-mode .map-telemetry-bar {
+    background: rgba(245, 247, 248, 0.95);
+    border-top: 1px solid rgba(20, 28, 34, 0.14);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
+}
+
+html.light-mode .telem-label,
+body.light-mode .telem-label {
+    color: rgba(24, 32, 38, 0.68);
+    font-weight: 500;
+}
+
+html.light-mode .telem-val,
+body.light-mode .telem-val {
+    color: #11161a;
+    font-weight: 600;
+}
+
+/* 11.4 Situation Overview & Metric Cards */
+html.light-mode .metric-card,
+body.light-mode .metric-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(20, 28, 34, 0.14);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+html.light-mode .metric-card.metric-critical,
+body.light-mode .metric-card.metric-critical {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.08), rgba(255, 255, 255, 0.9));
+    border: 1px solid rgba(239, 68, 68, 0.28);
+}
+
+html.light-mode .metric-label,
+body.light-mode .metric-label {
+    color: rgba(24, 32, 38, 0.72);
+    font-weight: 500;
+}
+
+html.light-mode .metric-value,
+body.light-mode .metric-value {
+    color: #11161a;
+}
+
+html.light-mode .metric-footer,
+body.light-mode .metric-footer {
+    color: rgba(24, 32, 38, 0.65);
+}
+
+html.light-mode .split-sub,
+body.light-mode .split-sub {
+    color: rgba(24, 32, 38, 0.65);
+}
+
+html.light-mode .split-divider,
+body.light-mode .split-divider {
+    color: rgba(20, 28, 34, 0.3);
+}
+
+html.light-mode .capacity-bar,
+body.light-mode .capacity-bar {
+    background: rgba(20, 28, 34, 0.1);
+}
+
+html.light-mode .metric-badge-red,
+body.light-mode .metric-badge-red {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+html.light-mode .metric-badge-green,
+body.light-mode .metric-badge-green {
+    background: rgba(31, 107, 58, 0.12);
+    border: 1px solid rgba(31, 107, 58, 0.35);
+    color: #1f6b3a;
+    font-weight: 600;
+}
+
+html.light-mode .metric-badge-amber,
+body.light-mode .metric-badge-amber {
+    background: rgba(245, 158, 11, 0.14);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #b45309;
+    font-weight: 600;
+}
+
+/* 11.5 AI Situation Synthesis Card */
+html.light-mode .ai-response-card,
+body.light-mode .ai-response-card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(20, 28, 34, 0.14);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+html.light-mode .ai-header,
+body.light-mode .ai-header {
+    border-bottom: 1px solid rgba(20, 28, 34, 0.10);
+}
+
+html.light-mode .ai-title,
+body.light-mode .ai-title {
+    color: #11161a;
+    font-weight: 700;
+}
+
+html.light-mode .ai-sparkle,
+body.light-mode .ai-sparkle {
+    color: #0284c7;
+}
+
+html.light-mode .ai-status-chip,
+body.light-mode .ai-status-chip {
+    color: #0284c7;
+    font-weight: 600;
+}
+
+html.light-mode .ai-chip-dot,
+body.light-mode .ai-chip-dot {
+    background: #0284c7;
+    box-shadow: 0 0 6px rgba(2, 132, 199, 0.5);
+}
+
+html.light-mode .ai-section-label,
+body.light-mode .ai-section-label {
+    color: rgba(24, 32, 38, 0.78);
+    font-weight: 600;
+}
+
+html.light-mode .ai-text,
+body.light-mode .ai-text {
+    color: #182026;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+html.light-mode .ai-guidance-text,
+body.light-mode .ai-guidance-text {
+    color: #11161a;
+    background: rgba(31, 107, 58, 0.08);
+    border-left: 3px solid #1f6b3a;
+    font-weight: 400;
+}
+
+html.light-mode .ai-footer,
+body.light-mode .ai-footer {
+    border-top: 1px solid rgba(20, 28, 34, 0.10);
+    color: rgba(24, 32, 38, 0.68);
+}
+
+html.light-mode .ai-confidence,
+body.light-mode .ai-confidence {
+    color: #1f6b3a;
+    font-weight: 700;
+}
+
+/* 11.6 Bottom Panel: Disaster Dynamics & Telemetry Controls */
+html.light-mode .sev-monitor-label,
+body.light-mode .sev-monitor-label {
+    color: rgba(24, 32, 38, 0.68);
+    font-weight: 500;
+}
+
+html.light-mode .sev-monitor-val,
+body.light-mode .sev-monitor-val {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #b45309;
+    font-weight: 700;
+}
+
+html.light-mode .origin-control-bar,
+body.light-mode .origin-control-bar {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(20, 28, 34, 0.14);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+html.light-mode .origin-tag,
+body.light-mode .origin-tag {
+    color: rgba(24, 32, 38, 0.7);
+    font-weight: 500;
+}
+
+html.light-mode .origin-coords-badge,
+body.light-mode .origin-coords-badge {
+    background: rgba(245, 158, 11, 0.14);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #b45309;
+    font-weight: 700;
+}
+
+html.light-mode .origin-hint,
+body.light-mode .origin-hint {
+    color: rgba(24, 32, 38, 0.68);
+    font-weight: 500;
+}
+
+html.light-mode .origin-btn,
+body.light-mode .origin-btn {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    color: #b45309;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+html.light-mode .origin-btn:hover,
+body.light-mode .origin-btn:hover {
+    background: rgba(245, 158, 11, 0.25);
+    color: #92400e;
+}
+
+html.light-mode .prop-field-label,
+body.light-mode .prop-field-label {
+    color: rgba(24, 32, 38, 0.72);
+    font-weight: 500;
+}
+
+html.light-mode .prop-field-val,
+body.light-mode .prop-field-val {
+    color: #11161a;
+    font-weight: 700;
+}
+
+html.light-mode .prop-slider,
+body.light-mode .prop-slider {
+    background: rgba(20, 28, 34, 0.22);
+    border: 1px solid rgba(20, 28, 34, 0.12);
+}
+
+html.light-mode .prop-slider::-webkit-slider-thumb,
+body.light-mode .prop-slider::-webkit-slider-thumb {
+    background: #182026;
+    border: 2px solid #ffffff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+html.light-mode .prop-slider::-moz-range-thumb,
+body.light-mode .prop-slider::-moz-range-thumb {
+    background: #182026;
+    border: 2px solid #ffffff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+html.light-mode .prop-action-btn,
+body.light-mode .prop-action-btn {
+    background: #182026;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(24, 32, 38, 0.2);
+}
+
+html.light-mode .prop-action-btn:hover,
+body.light-mode .prop-action-btn:hover {
+    background: #000000;
+    box-shadow: 0 4px 14px rgba(24, 32, 38, 0.3);
+}
+
+html.light-mode .prop-action-btn.btn-secondary,
+body.light-mode .prop-action-btn.btn-secondary {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(20, 28, 34, 0.22);
+    color: #11161a;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+html.light-mode .prop-action-btn.btn-secondary:hover,
+body.light-mode .prop-action-btn.btn-secondary:hover {
+    background: #ffffff;
+    border-color: rgba(20, 28, 34, 0.4);
+}

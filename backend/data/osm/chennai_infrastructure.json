@@ -1,0 +1,429 @@
+{
+  "city": "Chennai",
+  "country": "India",
+  "countryCode": "IN",
+  "type": "coastal",
+  "latitude": 13.0827,
+  "longitude": 80.2707,
+  "population": 4646732,
+  "bbox": [80.1800, 12.9600, 80.3200, 13.1600],
+  "supportedDisasters": ["flood", "earthquake", "cyclone", "tsunami"],
+  "hospitals": [
+    {
+      "id": "chn-hosp-1",
+      "name": "Rajiv Gandhi Government General Hospital (Madras GH)",
+      "latitude": 13.0805,
+      "longitude": 80.2778,
+      "beds": 2722,
+      "availableBeds": 520,
+      "icuBeds": 240,
+      "availableIcu": 38,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "coastalExposure": 0.40,
+      "address": "EVR Periyar Salai, Park Town, Near Chennai Central"
+    },
+    {
+      "id": "chn-hosp-2",
+      "name": "Government Stanley Medical College & Hospital",
+      "latitude": 13.1091,
+      "longitude": 80.2889,
+      "beds": 1580,
+      "availableBeds": 280,
+      "icuBeds": 150,
+      "availableIcu": 20,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "coastalExposure": 0.85,
+      "address": "Old Jail Road, Royapuram, North Chennai"
+    },
+    {
+      "id": "chn-hosp-3",
+      "name": "Government Kilpauk Medical College Hospital",
+      "latitude": 13.0808,
+      "longitude": 80.2435,
+      "beds": 1050,
+      "availableBeds": 190,
+      "icuBeds": 110,
+      "availableIcu": 18,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "coastalExposure": 0.15,
+      "address": "Poonamallee High Road, Kilpauk"
+    },
+    {
+      "id": "chn-hosp-4",
+      "name": "Apollo Hospitals Greams Road",
+      "latitude": 13.0601,
+      "longitude": 80.2527,
+      "beds": 600,
+      "availableBeds": 80,
+      "icuBeds": 90,
+      "availableIcu": 12,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "coastalExposure": 0.25,
+      "address": "21 Greams Lane, Thousand Lights"
+    },
+    {
+      "id": "chn-hosp-5",
+      "name": "Fortis Malar Hospital Adyar",
+      "latitude": 13.0068,
+      "longitude": 80.2572,
+      "beds": 180,
+      "availableBeds": 25,
+      "icuBeds": 35,
+      "availableIcu": 4,
+      "traumaCenter": false,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "coastalExposure": 0.70,
+      "address": "Gandhi Nagar, Adyar (Near Adyar Riverbank)"
+    },
+    {
+      "id": "chn-hosp-6",
+      "name": "MIOT International Hospital",
+      "latitude": 13.0234,
+      "longitude": 80.1873,
+      "beds": 1000,
+      "availableBeds": 140,
+      "icuBeds": 120,
+      "availableIcu": 16,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "coastalExposure": 0.10,
+      "address": "4/112 Mount Poonamallee Road, Manapakkam"
+    }
+  ],
+  "shelters": [
+    {
+      "id": "chn-shl-1",
+      "name": "Jawaharlal Nehru Stadium Complex Periamet",
+      "latitude": 13.0841,
+      "longitude": 80.2748,
+      "capacity": 14000,
+      "occupancy": 950,
+      "remainingCapacity": 13050,
+      "status": "OPERATIONAL",
+      "supplies": "EXCELLENT",
+      "address": "Sydenhams Road, Periamet"
+    },
+    {
+      "id": "chn-shl-2",
+      "name": "M.A. Chidambaram Stadium (Chepauk)",
+      "latitude": 13.0628,
+      "longitude": 80.2794,
+      "capacity": 18000,
+      "occupancy": 1200,
+      "remainingCapacity": 16800,
+      "status": "OPERATIONAL",
+      "supplies": "EXCELLENT",
+      "address": "Victoria Hostel Road, Chepauk (Elevated Pavilion)"
+    },
+    {
+      "id": "chn-shl-3",
+      "name": "Mayor Radhakrishnan Hockey Stadium Egmore",
+      "latitude": 13.0712,
+      "longitude": 80.2612,
+      "capacity": 6500,
+      "occupancy": 420,
+      "remainingCapacity": 6080,
+      "status": "OPERATIONAL",
+      "supplies": "ADEQUATE",
+      "address": "Kennet Lane, Egmore"
+    },
+    {
+      "id": "chn-shl-4",
+      "name": "Chennai Trade Centre Nandambakkam",
+      "latitude": 13.0169,
+      "longitude": 80.1834,
+      "capacity": 12000,
+      "occupancy": 300,
+      "remainingCapacity": 11700,
+      "status": "OPERATIONAL",
+      "supplies": "EXCELLENT",
+      "address": "Mount-Poonamallee High Road, Nandambakkam"
+    },
+    {
+      "id": "chn-shl-5",
+      "name": "Raj Bhavan & Anna University Civic Refuge Camp",
+      "latitude": 13.0102,
+      "longitude": 80.2355,
+      "capacity": 8500,
+      "occupancy": 210,
+      "remainingCapacity": 8290,
+      "status": "OPERATIONAL",
+      "supplies": "EXCELLENT",
+      "address": "Sardar Patel Road, Guindy"
+    }
+  ],
+  "powerStations": [
+    {
+      "id": "chn-pwr-1",
+      "name": "Basin Bridge Gas Turbine Power Station",
+      "latitude": 13.0987,
+      "longitude": 80.2718,
+      "capacityMW": 120,
+      "status": "OPERATIONAL",
+      "type": "THERMAL_GAS",
+      "supplies": ["chn-hosp-1", "chn-shl-1"],
+      "floodProne": true
+    },
+    {
+      "id": "chn-pwr-2",
+      "name": "Mylapore 110kV Coastal Substation",
+      "latitude": 13.0368,
+      "longitude": 80.2673,
+      "capacityMW": 150,
+      "status": "OPERATIONAL",
+      "type": "SUBSTATION",
+      "supplies": ["chn-shl-2", "chn-hosp-4"],
+      "floodProne": true
+    },
+    {
+      "id": "chn-pwr-3",
+      "name": "Taramani 230kV Central Substation",
+      "latitude": 12.9863,
+      "longitude": 80.2425,
+      "capacityMW": 350,
+      "status": "OPERATIONAL",
+      "type": "SUBSTATION",
+      "supplies": ["chn-hosp-5", "chn-shl-5"],
+      "floodProne": false
+    },
+    {
+      "id": "chn-pwr-4",
+      "name": "Guindy 230kV Industrial Substation",
+      "latitude": 13.0089,
+      "longitude": 80.2114,
+      "capacityMW": 280,
+      "status": "OPERATIONAL",
+      "type": "SUBSTATION",
+      "supplies": ["chn-hosp-6", "chn-shl-4"],
+      "floodProne": false
+    }
+  ],
+  "portsAndAirports": [
+    {
+      "id": "chn-port-1",
+      "name": "Chennai Port Trust & Container Terminal",
+      "latitude": 13.0878,
+      "longitude": 80.2980,
+      "type": "PORT",
+      "status": "OPERATIONAL",
+      "coastalExposure": 1.0
+    },
+    {
+      "id": "chn-air-1",
+      "name": "Chennai International Airport (MAA)",
+      "latitude": 12.9941,
+      "longitude": 80.1709,
+      "type": "AIRPORT",
+      "status": "OPERATIONAL",
+      "coastalExposure": 0.1
+    }
+  ],
+  "bridges": [
+    {
+      "id": "chn-brg-1",
+      "name": "Napier Bridge (Cooum Estuary at Marina)",
+      "latitude": 13.0694,
+      "longitude": 80.2852,
+      "lengthMeters": 140,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Fort St George / Kamarajar Salai", "Marina Beach Promenade"]
+    },
+    {
+      "id": "chn-brg-2",
+      "name": "Thiru Vi Ka Bridge (Adyar River Mouth)",
+      "latitude": 13.0097,
+      "longitude": 80.2605,
+      "lengthMeters": 320,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Santhome / Foreshore Estate", "Adyar / Besant Nagar"]
+    },
+    {
+      "id": "chn-brg-3",
+      "name": "Kotturpuram Bridge (Adyar River Inland)",
+      "latitude": 13.0189,
+      "longitude": 80.2411,
+      "lengthMeters": 210,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Kotturpuram / Anna University", "Nandanam / Mount Road"]
+    },
+    {
+      "id": "chn-brg-4",
+      "name": "Maraimalai Adigal Bridge (Saidapet)",
+      "latitude": 13.0152,
+      "longitude": 80.2215,
+      "lengthMeters": 250,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Saidapet / Guindy", "Little Mount / Anna Salai"]
+    }
+  ],
+  "roads": [
+    {
+      "id": "chn-rd-1",
+      "name": "Kamarajar Salai (Marina Coastal Expressway)",
+      "speedKmh": 50,
+      "capacity": 4500,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [80.2980, 13.0878],
+        [80.2852, 13.0694],
+        [80.2810, 13.0550],
+        [80.2790, 13.0410],
+        [80.2760, 13.0300]
+      ]
+    },
+    {
+      "id": "chn-rd-2",
+      "name": "Anna Salai (Mount Road - Central Backbone)",
+      "speedKmh": 55,
+      "capacity": 6000,
+      "laneCount": 8,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [80.2778, 13.0805],
+        [80.2670, 13.0680],
+        [80.2527, 13.0601],
+        [80.2411, 13.0380],
+        [80.2215, 13.0152],
+        [80.2114, 13.0089]
+      ]
+    },
+    {
+      "id": "chn-rd-3",
+      "name": "EVR Periyar Salai (Poonamallee High Road)",
+      "speedKmh": 50,
+      "capacity": 4800,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [80.2778, 13.0805],
+        [80.2612, 13.0780],
+        [80.2435, 13.0808],
+        [80.2200, 13.0830],
+        [80.1950, 13.0850]
+      ]
+    },
+    {
+      "id": "chn-rd-4",
+      "name": "Santhome High Road & Coastal Link",
+      "speedKmh": 40,
+      "capacity": 3200,
+      "laneCount": 4,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [80.2790, 13.0410],
+        [80.2760, 13.0300],
+        [80.2673, 13.0200],
+        [80.2605, 13.0097]
+      ]
+    },
+    {
+      "id": "chn-rd-5",
+      "name": "Sardar Patel Road & Guindy High-Ground Arterial",
+      "speedKmh": 50,
+      "capacity": 4200,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [80.2605, 13.0097],
+        [80.2572, 13.0068],
+        [80.2411, 13.0189],
+        [80.2355, 13.0102],
+        [80.2114, 13.0089]
+      ]
+    },
+    {
+      "id": "chn-rd-6",
+      "name": "GST Road (Grand Southern Trunk to Airport)",
+      "speedKmh": 65,
+      "capacity": 5500,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [80.2114, 13.0089],
+        [80.1980, 13.0020],
+        [80.1834, 13.0169],
+        [80.1709, 12.9941]
+      ]
+    }
+  ],
+  "populationZones": [
+    {
+      "id": "chn-zone-1",
+      "name": "Marina Beach & Santhome Coastal Inundation Belt",
+      "center": [80.2800, 13.0450],
+      "population": 620000,
+      "densityPerKm2": 26000,
+      "elevationMeters": 4,
+      "vulnerability": 0.95
+    },
+    {
+      "id": "chn-zone-2",
+      "name": "Adyar River Basin & Kotturpuram Low-Lying Sector",
+      "center": [80.2450, 13.0150],
+      "population": 780000,
+      "densityPerKm2": 22000,
+      "elevationMeters": 6,
+      "vulnerability": 0.88
+    },
+    {
+      "id": "chn-zone-3",
+      "name": "George Town & Chennai Harbor Dense Commercial Sector",
+      "center": [80.2900, 13.0950],
+      "population": 540000,
+      "densityPerKm2": 35000,
+      "elevationMeters": 5,
+      "vulnerability": 0.90
+    },
+    {
+      "id": "chn-zone-4",
+      "name": "Guindy & Saidapet Elevated Transit Hub",
+      "center": [80.2150, 13.0100],
+      "population": 920000,
+      "densityPerKm2": 16000,
+      "elevationMeters": 18,
+      "vulnerability": 0.40
+    },
+    {
+      "id": "chn-zone-5",
+      "name": "Anna Nagar & Kilpauk Central Inland Quadrant",
+      "center": [80.2200, 13.0850],
+      "population": 1150000,
+      "densityPerKm2": 19000,
+      "elevationMeters": 14,
+      "vulnerability": 0.50
+    }
+  ],
+  "buildings": [
+    { "id": "b-chn-1", "name": "Ripon Building (Civic HQ)", "lng": 80.276, "lat": 13.083, "height": 38, "use": "municipal" },
+    { "id": "b-chn-2", "name": "LIC Building (Anna Salai)", "lng": 80.268, "lat": 13.067, "height": 54, "use": "commercial" },
+    { "id": "b-chn-3", "name": "Chennai Port Administration Tower", "lng": 80.295, "lat": 13.090, "height": 45, "use": "maritime" },
+    { "id": "b-chn-4", "name": "Chepauk Cricket Pavilion", "lng": 80.279, "lat": 13.063, "height": 36, "use": "stadium" },
+    { "id": "b-chn-5", "name": "Santhome Basilica Spire", "lng": 80.277, "lat": 13.033, "height": 48, "use": "civic" },
+    { "id": "b-chn-6", "name": "Anna Centenary Library", "lng": 80.239, "lat": 13.013, "height": 42, "use": "educational" },
+    { "id": "b-chn-7", "name": "Rajiv Gandhi GH Multi-Specialty Wing", "lng": 80.279, "lat": 13.079, "height": 50, "use": "hospital" },
+    { "id": "b-chn-8", "name": "Guindy Tech Park Tower 1", "lng": 80.213, "lat": 13.007, "height": 62, "use": "commercial" },
+    { "id": "b-chn-9", "name": "Marina Coastal Residential Tower", "lng": 80.281, "lat": 13.051, "height": 44, "use": "residential" },
+    { "id": "b-chn-10", "name": "Central Railway Station Heritage Wing", "lng": 80.276, "lat": 13.082, "height": 32, "use": "transit" }
+  ]
+}

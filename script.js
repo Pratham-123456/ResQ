@@ -782,6 +782,19 @@ launchButton.addEventListener("click", function () {
         return;
     }
 
+function validateDisasterCompatibility() {
+    if (!selectedCity || !disasterSelect) return true;
+    const cityName = (selectedCity.name || "").toLowerCase();
+    const disaster = (disasterSelect.value || "").toLowerCase();
+
+    // Delhi is landlocked
+    if (cityName.includes("delhi") && (disaster === "cyclone" || disaster === "tsunami")) {
+        alert("INCOMPATIBLE SCENARIO: Delhi is landlocked. Cyclone and Tsunami are only supported for coastal cities (e.g. Chennai). Please select Flood or Earthquake.");
+        return false;
+    }
+    return true;
+}
+
     if (!validateDisasterCompatibility()) {
         return;
     }
@@ -805,11 +818,21 @@ launchButton.addEventListener("click", function () {
     };
 
     /*
-            Save the complete simulation
-            configuration.
-        */
-
+        Save the complete simulation configuration and notify backend.
+    */
     localStorage.setItem("resqSimulation", JSON.stringify(simulation));
+
+    if (window.RESQ_API) {
+        window.RESQ_API.createScenario({
+            city: simulation.city,
+            disaster: simulation.disaster,
+            origin: { latitude: simulation.latitude, longitude: simulation.longitude },
+            seed: 42
+        }).then(sc => {
+            simulation.scenarioId = sc.id;
+            localStorage.setItem("resqSimulation", JSON.stringify(simulation));
+        }).catch(err => console.warn("[RESQ] Backend scenario pre-creation note:", err));
+    }
 
     /*
             Transition.

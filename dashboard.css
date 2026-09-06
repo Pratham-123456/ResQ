@@ -1332,3 +1332,123 @@ body.light-mode .prop-action-btn.btn-secondary {
         display: none;
     }
 }
+
+/* ============================================================
+   10. START SIMULATION & ORIGIN SELECTION STYLES
+============================================================ */
+
+.start-sim-btn {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(16, 185, 129, 0.08)) !important;
+    border-color: rgba(16, 185, 129, 0.5) !important;
+    color: #10b981 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+}
+
+.start-sim-btn:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(16, 185, 129, 0.15)) !important;
+    box-shadow: 0 0 18px rgba(16, 185, 129, 0.4);
+    transform: translateY(-1px);
+}
+
+.origin-control-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    margin-bottom: 8px;
+}
+
+body.light-mode .origin-control-bar {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(20, 28, 34, 0.1);
+}
+
+.origin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+}
+
+.origin-tag {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+}
+
+.origin-coords-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-high);
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 2px 8px;
+}
+
+.origin-hint {
+    font-size: 8px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.origin-btn {
+    height: 28px;
+    padding: 0 12px;
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
+    color: var(--color-high);
+}
+
+.origin-btn.active {
+    background: #f59e0b !important;
+    color: #080a0c !important;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.6);
+    animation: pulseOriginBtn 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseOriginBtn {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+.map-container.selecting-origin {
+    cursor: crosshair !important;
+}
+
+.marker-origin {
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle, #ef4444 30%, rgba(239, 68, 68, 0.2) 70%);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    box-shadow: 0 0 16px #ef4444;
+    animation: pulseEpicenter 1.5s infinite;
+}
+
+@keyframes pulseEpicenter {
+    0% { transform: scale(0.9); box-shadow: 0 0 8px #ef4444; }
+    50% { transform: scale(1.15); box-shadow: 0 0 22px rgba(239, 68, 68, 0.8); }
+    100% { transform: scale(0.9); box-shadow: 0 0 8px #ef4444; }
+}
+
+.marker-hospital-full {
+    background: rgba(239, 68, 68, 0.95);
+    position: relative;
+}
+
+.marker-hospital-full::after {
+    content: "/";
+    position: absolute;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    transform: rotate(20deg);
+}
+

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- MapLibre GL JS -->
+    <!-- MapLibre GL JS & OpenFreeMap (100% Free & Zero API Key) -->
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
     <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 
@@ -60,6 +60,10 @@
 
         <div class="nav-tools">
             <div class="sim-controls">
+                <button class="tool-btn start-sim-btn" id="btnStartSim" type="button" title="Start Disaster Simulation">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">START SIMULATION</span>
+                </button>
                 <button class="tool-btn" id="btnPlayPause" type="button" title="Pause or Resume Simulation">
                     <span class="btn-icon" id="playPauseIcon">⏸</span>
                     <span class="btn-text" id="playPauseText">PAUSE</span>
@@ -112,7 +116,7 @@
                 <div class="panel-header">
                     <div>
                         <div class="panel-title">GEOSPATIAL SITUATION MATRIX</div>
-                        <div class="panel-subtitle">MapLibre 3D Vector Engine · 45° Perspective View</div>
+                        <div class="panel-subtitle">OpenFreeMap 3D Vector Engine · 45° Perspective View</div>
                     </div>
                     <div class="panel-tag" id="mapPitchTag">45° PITCH · 3D BUILDINGS</div>
                 </div>
@@ -300,6 +304,21 @@
                     </div>
                 </div>
 
+                <!-- Interactive Origin Selection Strip -->
+                <div class="origin-control-bar" id="originControlBar">
+                    <div class="origin-info">
+                        <span class="origin-tag">HAZARD ORIGIN / EPICENTER:</span>
+                        <span class="origin-coords-badge" id="originCoordsVal">--° N / --° E</span>
+                        <span class="origin-hint" id="originSelectionHint">Click "SET ORIGIN" then click on the map</span>
+                    </div>
+                    <button class="launch-button origin-btn" id="btnSetOrigin" type="button" title="Interactively pick disaster starting point / epicenter on map">
+                        <span class="launch-content">
+                            <span class="origin-icon">📍</span>
+                            <span id="btnSetOriginText">SET ORIGIN ON MAP</span>
+                        </span>
+                    </button>
+                </div>
+
                 <!-- Dynamic Properties Control List -->
                 <div class="properties-grid" id="propertiesGrid">
                     <!-- Populated dynamically based on active disaster schema -->
@@ -324,7 +343,8 @@
         </section>
     </main>
 
-    <!-- Core Scripts (Data Rules -> Engine -> Dashboard Orchestration) -->
+    <!-- Core Scripts (API Client -> Data Rules -> Engine -> Dashboard Orchestration) -->
+    <script src="services/api.js"></script>
     <script src="data/disaster-rules.js"></script>
     <script src="simulation-engine.js"></script>
     <script src="dashboard.js"></script>

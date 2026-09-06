@@ -1,0 +1,466 @@
+{
+  "city": "Delhi",
+  "country": "India",
+  "countryCode": "IN",
+  "type": "landlocked",
+  "latitude": 28.6139,
+  "longitude": 77.2090,
+  "population": 16787941,
+  "bbox": [77.1000, 28.5200, 77.3200, 28.7200],
+  "supportedDisasters": ["flood", "earthquake"],
+  "hospitals": [
+    {
+      "id": "del-hosp-1",
+      "name": "AIIMS (All India Institute of Medical Sciences)",
+      "latitude": 28.5672,
+      "longitude": 77.2100,
+      "beds": 2478,
+      "availableBeds": 412,
+      "icuBeds": 280,
+      "availableIcu": 48,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Ansari Nagar East, New Delhi"
+    },
+    {
+      "id": "del-hosp-2",
+      "name": "Safdarjung Hospital & Vardhman Mahavir Medical College",
+      "latitude": 28.5701,
+      "longitude": 77.2065,
+      "beds": 1531,
+      "availableBeds": 210,
+      "icuBeds": 160,
+      "availableIcu": 24,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Ring Road, Safdarjung, New Delhi"
+    },
+    {
+      "id": "del-hosp-3",
+      "name": "Lok Nayak Hospital (LNJP)",
+      "latitude": 28.6369,
+      "longitude": 77.2405,
+      "beds": 2000,
+      "availableBeds": 340,
+      "icuBeds": 180,
+      "availableIcu": 30,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Jawaharlal Nehru Marg, Delhi Gate"
+    },
+    {
+      "id": "del-hosp-4",
+      "name": "Dr. Ram Manohar Lohia Hospital (RML)",
+      "latitude": 28.6247,
+      "longitude": 77.2014,
+      "beds": 1420,
+      "availableBeds": 195,
+      "icuBeds": 140,
+      "availableIcu": 22,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Baba Kharak Singh Marg, Connaught Place"
+    },
+    {
+      "id": "del-hosp-5",
+      "name": "Sir Ganga Ram Hospital",
+      "latitude": 28.6394,
+      "longitude": 77.1895,
+      "beds": 675,
+      "availableBeds": 85,
+      "icuBeds": 95,
+      "availableIcu": 14,
+      "traumaCenter": false,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Rajinder Nagar, New Delhi"
+    },
+    {
+      "id": "del-hosp-6",
+      "name": "Guru Teg Bahadur Hospital (GTB)",
+      "latitude": 28.6833,
+      "longitude": 77.3083,
+      "beds": 1500,
+      "availableBeds": 220,
+      "icuBeds": 150,
+      "availableIcu": 26,
+      "traumaCenter": true,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Dilshad Garden, Shahdara, East Delhi"
+    },
+    {
+      "id": "del-hosp-7",
+      "name": "Max Super Speciality Hospital Saket",
+      "latitude": 28.5273,
+      "longitude": 77.2119,
+      "beds": 530,
+      "availableBeds": 72,
+      "icuBeds": 80,
+      "availableIcu": 11,
+      "traumaCenter": false,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "1, 2 Press Enclave Marg, Saket"
+    },
+    {
+      "id": "del-hosp-8",
+      "name": "Fortis Escorts Heart Institute Okhla",
+      "latitude": 28.5612,
+      "longitude": 77.2801,
+      "beds": 310,
+      "availableBeds": 45,
+      "icuBeds": 60,
+      "availableIcu": 9,
+      "traumaCenter": false,
+      "powerStatus": "GRID",
+      "operationalStatus": "OPERATIONAL",
+      "address": "Okhla Road, Sukhdev Vihar, New Delhi"
+    }
+  ],
+  "shelters": [
+    {
+      "id": "del-shl-1",
+      "name": "Jawaharlal Nehru Stadium Complex",
+      "latitude": 28.5828,
+      "longitude": 77.2344,
+      "capacity": 15000,
+      "occupancy": 1200,
+      "remainingCapacity": 13800,
+      "status": "OPERATIONAL",
+      "supplies": "EXCELLENT",
+      "address": "Pragati Vihar, Lodhi Colony"
+    },
+    {
+      "id": "del-shl-2",
+      "name": "Indira Gandhi Indoor Arena (IP Estate)",
+      "latitude": 28.6292,
+      "longitude": 77.2486,
+      "capacity": 12000,
+      "occupancy": 850,
+      "remainingCapacity": 11150,
+      "status": "OPERATIONAL",
+      "supplies": "EXCELLENT",
+      "address": "Indraprastha Estate, Near Yamuna River"
+    },
+    {
+      "id": "del-shl-3",
+      "name": "Major Dhyan Chand National Stadium",
+      "latitude": 28.6127,
+      "longitude": 77.2372,
+      "capacity": 8000,
+      "occupancy": 400,
+      "remainingCapacity": 7600,
+      "status": "OPERATIONAL",
+      "supplies": "ADEQUATE",
+      "address": "India Gate Circle, Central Delhi"
+    },
+    {
+      "id": "del-shl-4",
+      "name": "Thyagaraj Sports Complex",
+      "latitude": 28.5772,
+      "longitude": 77.2198,
+      "capacity": 6500,
+      "occupancy": 320,
+      "remainingCapacity": 6180,
+      "status": "OPERATIONAL",
+      "supplies": "ADEQUATE",
+      "address": "INA Colony, South Delhi"
+    },
+    {
+      "id": "del-shl-5",
+      "name": "Talkatora Indoor Stadium",
+      "latitude": 28.6225,
+      "longitude": 77.1931,
+      "capacity": 4500,
+      "occupancy": 150,
+      "remainingCapacity": 4350,
+      "status": "OPERATIONAL",
+      "supplies": "ADEQUATE",
+      "address": "Willingdon Crescent, President Estate"
+    },
+    {
+      "id": "del-shl-6",
+      "name": "Chhatrasal Stadium Model Town",
+      "latitude": 28.7058,
+      "longitude": 77.1894,
+      "capacity": 7000,
+      "occupancy": 280,
+      "remainingCapacity": 6720,
+      "status": "OPERATIONAL",
+      "supplies": "ADEQUATE",
+      "address": "Model Town, North Delhi"
+    }
+  ],
+  "powerStations": [
+    {
+      "id": "del-pwr-1",
+      "name": "Pragati Combined Cycle Power Station",
+      "latitude": 28.6231,
+      "longitude": 77.2478,
+      "capacityMW": 330,
+      "status": "OPERATIONAL",
+      "type": "THERMAL_GAS",
+      "supplies": ["del-hosp-3", "del-shl-2"],
+      "floodProne": true
+    },
+    {
+      "id": "del-pwr-2",
+      "name": "Wazirabad 220kV Grid Substation",
+      "latitude": 28.7125,
+      "longitude": 77.2310,
+      "capacityMW": 220,
+      "status": "OPERATIONAL",
+      "type": "SUBSTATION",
+      "supplies": ["del-hosp-6", "del-shl-6"],
+      "floodProne": true
+    },
+    {
+      "id": "del-pwr-3",
+      "name": "Maharani Bagh 220kV Substation",
+      "latitude": 28.5778,
+      "longitude": 77.2625,
+      "capacityMW": 400,
+      "status": "OPERATIONAL",
+      "type": "SUBSTATION",
+      "supplies": ["del-hosp-1", "del-hosp-2", "del-hosp-8", "del-shl-1"],
+      "floodProne": false
+    },
+    {
+      "id": "del-pwr-4",
+      "name": "Mandi House 66kV Substation",
+      "latitude": 28.6256,
+      "longitude": 77.2341,
+      "capacityMW": 120,
+      "status": "OPERATIONAL",
+      "type": "DISTRIBUTION",
+      "supplies": ["del-hosp-4", "del-shl-3", "del-shl-5"],
+      "floodProne": false
+    },
+    {
+      "id": "del-pwr-5",
+      "name": "Pusa Road 66kV Substation",
+      "latitude": 28.6432,
+      "longitude": 77.1852,
+      "capacityMW": 100,
+      "status": "OPERATIONAL",
+      "type": "DISTRIBUTION",
+      "supplies": ["del-hosp-5"],
+      "floodProne": false
+    }
+  ],
+  "bridges": [
+    {
+      "id": "del-brg-1",
+      "name": "ITO Yamuna Barrage & Bridge",
+      "latitude": 28.6297,
+      "longitude": 77.2514,
+      "lengthMeters": 580,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Central Delhi / ITO", "East Delhi / Vikas Marg"]
+    },
+    {
+      "id": "del-brg-2",
+      "name": "Old Yamuna Bridge (Loha Pul)",
+      "latitude": 28.6601,
+      "longitude": 77.2472,
+      "lengthMeters": 800,
+      "structuralIntegrity": 0.85,
+      "status": "OPEN",
+      "connects": ["Old Delhi Railway", "Shahdara"]
+    },
+    {
+      "id": "del-brg-3",
+      "name": "Nizamuddin Yamuna Bridge",
+      "latitude": 28.5886,
+      "longitude": 77.2647,
+      "lengthMeters": 650,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Ring Road / Sarai Kale Khan", "Mayur Vihar / Noida Link"]
+    },
+    {
+      "id": "del-brg-4",
+      "name": "Barapullah Elevated Corridor",
+      "latitude": 28.5821,
+      "longitude": 77.2458,
+      "lengthMeters": 4200,
+      "structuralIntegrity": 1.0,
+      "status": "OPEN",
+      "connects": ["Sarai Kale Khan", "INA / AIIMS"]
+    }
+  ],
+  "roads": [
+    {
+      "id": "del-rd-1",
+      "name": "Ring Road (Mahatma Gandhi Marg) - South Corridor",
+      "speedKmh": 60,
+      "capacity": 5500,
+      "laneCount": 8,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.2000, 28.5700],
+        [77.2065, 28.5701],
+        [77.2100, 28.5672],
+        [77.2344, 28.5750],
+        [77.2580, 28.5820],
+        [77.2647, 28.5886]
+      ]
+    },
+    {
+      "id": "del-rd-2",
+      "name": "Vikas Marg - East Delhi Transit Corridor",
+      "speedKmh": 50,
+      "capacity": 4200,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.2405, 28.6320],
+        [77.2486, 28.6292],
+        [77.2514, 28.6297],
+        [77.2750, 28.6315],
+        [77.3000, 28.6330]
+      ]
+    },
+    {
+      "id": "del-rd-3",
+      "name": "Outer Ring Road - North Corridor (Yamuna Basin)",
+      "speedKmh": 60,
+      "capacity": 4800,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.1894, 28.7058],
+        [77.2100, 28.7120],
+        [77.2310, 28.7125],
+        [77.2472, 28.6601]
+      ]
+    },
+    {
+      "id": "del-rd-4",
+      "name": "Barakhamba Road & Central Radial Corridor",
+      "speedKmh": 45,
+      "capacity": 3800,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.2014, 28.6247],
+        [77.2185, 28.6300],
+        [77.2341, 28.6256],
+        [77.2372, 28.6127]
+      ]
+    },
+    {
+      "id": "del-rd-5",
+      "name": "Mathura Road / Ashram Arterial",
+      "speedKmh": 50,
+      "capacity": 4500,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.2372, 28.6127],
+        [77.2458, 28.5821],
+        [77.2625, 28.5778],
+        [77.2801, 28.5612]
+      ]
+    },
+    {
+      "id": "del-rd-6",
+      "name": "Aurobindo Marg / IIT Flyover Corridor",
+      "speedKmh": 50,
+      "capacity": 3600,
+      "laneCount": 6,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.2100, 28.5672],
+        [77.2085, 28.5450],
+        [77.2119, 28.5273]
+      ]
+    },
+    {
+      "id": "del-rd-7",
+      "name": "Yamuna Riverfront Low-Lying Bypass",
+      "speedKmh": 40,
+      "capacity": 2800,
+      "laneCount": 4,
+      "isArterial": true,
+      "isBridge": false,
+      "coordinates": [
+        [77.2478, 28.6231],
+        [77.2514, 28.6297],
+        [77.2472, 28.6601],
+        [77.2350, 28.6900]
+      ]
+    }
+  ],
+  "populationZones": [
+    {
+      "id": "del-zone-1",
+      "name": "Yamuna Low-Lying Floodplain & Geeta Colony",
+      "center": [77.2600, 28.6400],
+      "population": 850000,
+      "densityPerKm2": 24000,
+      "elevationMeters": 204,
+      "vulnerability": 0.85
+    },
+    {
+      "id": "del-zone-2",
+      "name": "Old Delhi & Chandni Chowk Dense Masonry Sector",
+      "center": [77.2300, 28.6550],
+      "population": 1200000,
+      "densityPerKm2": 32000,
+      "elevationMeters": 218,
+      "vulnerability": 0.90
+    },
+    {
+      "id": "del-zone-3",
+      "name": "Connaught Place & Central Administrative Zone",
+      "center": [77.2200, 28.6250],
+      "population": 450000,
+      "densityPerKm2": 9500,
+      "elevationMeters": 215,
+      "vulnerability": 0.45
+    },
+    {
+      "id": "del-zone-4",
+      "name": "South Delhi / AIIMS / Saket Residential Corridor",
+      "center": [77.2150, 28.5500],
+      "population": 1650000,
+      "densityPerKm2": 14000,
+      "elevationMeters": 226,
+      "vulnerability": 0.50
+    },
+    {
+      "id": "del-zone-5",
+      "name": "East Delhi / Mayur Vihar Trans-Yamuna Sector",
+      "center": [77.2900, 28.6050],
+      "population": 1400000,
+      "densityPerKm2": 21000,
+      "elevationMeters": 206,
+      "vulnerability": 0.80
+    }
+  ],
+  "buildings": [
+    { "id": "b-del-1", "name": "Pragati Maidan Hall 1", "lng": 77.242, "lat": 28.618, "height": 34, "use": "civic" },
+    { "id": "b-del-2", "name": "Vikas Minar (DDA)", "lng": 77.248, "lat": 28.628, "height": 72, "use": "office" },
+    { "id": "b-del-3", "name": "Palika Kendra", "lng": 77.216, "lat": 28.626, "height": 91, "use": "government" },
+    { "id": "b-del-4", "name": "AIIMS Residential Tower", "lng": 77.212, "lat": 28.568, "height": 48, "use": "residential" },
+    { "id": "b-del-5", "name": "Civic Centre Tower", "lng": 77.228, "lat": 28.643, "height": 102, "use": "municipal" },
+    { "id": "b-del-6", "name": "Scope Complex", "lng": 77.239, "lat": 28.587, "height": 55, "use": "commercial" },
+    { "id": "b-del-7", "name": "JLN Stadium Pavilion", "lng": 77.236, "lat": 28.583, "height": 40, "use": "recreational" },
+    { "id": "b-del-8", "name": "Shastri Bhawan Complex", "lng": 77.215, "lat": 28.616, "height": 38, "use": "government" },
+    { "id": "b-del-9", "name": "Mayur Vihar Tower A", "lng": 77.288, "lat": 28.607, "height": 52, "use": "residential" },
+    { "id": "b-del-10", "name": "East Delhi Metro Hub", "lng": 77.272, "lat": 28.631, "height": 30, "use": "transit" }
+  ]
+}

@@ -10,128 +10,72 @@
 
 ---
 
-## 🌟 Key Capabilities
+## Key Features
 
-- **Physics-Informed Disaster Engines**:
-  - **Floods**: Terrain elevation diffusion, runoff rates, rainfall-driven water volume propagation.
-  - **Earthquakes**: Gutenberg-Richter magnitude, attenuation curves, Mercalli intensity, and soil liquefaction.
-  - **Cyclones**: Eye-wall pressure drop, Holland parametric wind-field equations, storm surge calculations.
-  - **Tsunamis**: Shallow-water wave shoaling, coastal run-up heights, inundation distance contours.
-- **Cascading Infrastructure Failure Engine**:
-  - Multi-order dependency analysis: Power Grid failure -> Telecom Tower blackout -> Hospital backup reliance -> Road capacity drop.
-  - Dynamic survival probability scoring and health/status degradation.
-- **Dynamic Graph Evacuation Routing**:
-  - OpenStreetMap-derived road networks weighted by distance, hazard exposure, and capacity.
-  - Real-time road blockage avoidance (roads within flood/hazard polygons or rubble zones are dynamically removed or heavily penalized).
-  - Multi-destination safest-path evacuation to designated emergency shelters and relief camps using NetworkX.
-- **Interactive 3D Map (Zero API Keys Needed)**:
-  - Powered by **OpenFreeMap** (\liberty\ and \positron\ vector styles) and **MapLibre GL JS**.
-  - 3D building extrusions with dynamic 45° pitch and lighting.
-  - Real-time animated hazard boundary buffers, active evacuation corridors, blocked road segments, and emergency POI markers.
-  - Interactive origin pin-drop mode: click anywhere on the map to calculate customized evacuation routes.
-- **Live WebSocket Telemetry**:
-  - Real-time broadcast of simulation steps, casualty estimates, shelter capacity stats, and cascading failure events.
-- **AI Briefings & Tactical Recommendations**:
-  - Structured situation reports, evacuation status updates, and priority resource allocation advice.
+- **Disaster Simulation**
+  - Floods
+  - Earthquakes
+  - Cyclones
+  - Tsunamis
+  - Disaster-specific physical parameters and progression models
 
----
+- **Cascading Infrastructure Failures**
+  - Models dependencies between power, communications, hospitals, and transportation.
+  - Simulates multi-stage infrastructure degradation during disasters.
 
-## 🏗️ Architecture Overview
+- **Dynamic Evacuation Routing**
+  - Uses OpenStreetMap-derived road networks and NetworkX.
+  - Calculates safer evacuation routes based on distance, hazard exposure, road capacity, and blockages.
+  - Dynamically adapts routes as disaster conditions change.
 
-\                        ┌──────────────────────────────────────────────┐
-                        │               Browser Client                 │
-                        │  (MapLibre GL 3D, OpenFreeMap, Vanilla JS)   │
-                        └──────────────┬───────────────────────────────┘
-                                       │
-                      REST Requests    │    WebSocket Stream
-                      (HTTP /api/...)  │    (/ws/simulations/{id})
-                                       ▼
-                        ┌──────────────────────────────────────────────┐
-                        │             FastAPI Backend                  │
-                        ├──────────────────────────────────────────────┤
-                        │  • Simulation Engine (Tick loop & state)    │
-                        │  • Disaster Physics (Flood, Quake, etc.)     │
-                        │  • Cascading Failure Engine (Dependencies)  │
-                        │  • Graph Routing Engine (NetworkX)           │
-                        │  • Geospatial Utilities & OSM Parser         │
-                        │  • AI Briefing Service                       │
-                        └──────────────────────────────────────────────┘
-\
----
+- **Interactive 3D Map**
+  - MapLibre GL JS with OpenFreeMap.
+  - No Mapbox API key required.
+  - 3D building visualization and 45° map perspective.
+  - Live visualization of:
+    - Hazard zones
+    - Blocked roads
+    - Evacuation routes
+    - Hospitals
+    - Shelters
+    - Power outages
+  - Interactive disaster-origin and earthquake-epicenter selection.
 
-## 🚀 Quick Start
+- **Real-Time Simulation**
+  - FastAPI backend with WebSocket telemetry.
+  - Live updates for affected population, infrastructure status, shelter capacity, casualties, and disaster progression.
 
-### 1. Prerequisites
-- Python 3.10+
-- Modern Web Browser (Chrome, Edge, Firefox, Safari)
+- **AI Situation Intelligence**
+  - Generates structured situation briefings.
+  - Provides evacuation recommendations and tactical resource-allocation guidance based on the current simulation state.
 
-### 2. Backend Setup
+## System Flow
 
-\\ash
-# Navigate to backend directory
-cd backend
-
-# Create virtual environment
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Linux/macOS:
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the backend server
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-\The backend API is now live at \http://localhost:8000\.  
-Swagger interactive documentation is available at \http://localhost:8000/docs\.
-
-### 3. Frontend Setup
-
-In another terminal:
-\\ash
-# From the project root
-python -m http.server 3000
-\Open your browser and navigate to:
-**\http://localhost:3000\** (or \http://localhost:3000/dashboard.html\)
-
----
-
-## 🐳 Docker Deployment
-
-Run the entire platform using Docker Compose:
-
-\\ash
-docker-compose up --build
-\- Frontend: \http://localhost:3000- Backend API: \http://localhost:8000- Interactive API Docs: \http://localhost:8000/docs
----
-
-## 🧪 Automated Testing
-
-Execute the backend test suite:
-
-\\ash
-pytest backend/tests -v
-\
-Test coverage includes:
-- Disaster physics propagation & geometry generation
-- Cascading failure multi-order dependency chains
-- NetworkX evacuation routing & obstacle avoidance
-- REST endpoints and WebSocket simulation lifecycle
-
----
-
-## 🗺️ Supported Geospatial Regions
-
-1. **Delhi NCR, India**:
-   - Focus: Inland riverine flooding (Yamuna basin), earthquake fault seismic zones.
-   - Pre-indexed OSM roads, relief camps, power stations, and medical centers.
-2. **Chennai, India**:
-   - Focus: Coastal cyclone storm surge, tsunami inundation, urban flash floods.
-   - Pre-indexed coastal barriers, tsunami shelters, and arterial road networks.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+```text
+User
+  ↓
+RESQ Web Interface
+  ↓
+City + Disaster Selection
+  ↓
+Simulation Configuration
+  ↓
+FastAPI Backend
+  ↓
+Disaster Simulation Engine
+  ↓
+Hazard Propagation
+  ↓
+Infrastructure Impact & Cascading Failures
+  ↓
+Evacuation Route Calculation
+  ↓
+AI Situation Analysis
+  ↓
+Real-Time WebSocket Updates
+  ↓
+RESQ Dashboard
+  ↓
+MapLibre GL JS + OpenFreeMap
+  ↓
+Live Disaster Map & Evacuation Guidance

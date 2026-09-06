@@ -2301,28 +2301,28 @@ html.light-mode .control-panel {
 
 body.light-mode .panel-title,
 html.light-mode .panel-title {
-    color: #11161a;
-    font-weight: 600;
+    color: #11161a !important;
+    font-weight: 700 !important;
 }
 body.light-mode .panel-subtitle,
 html.light-mode .panel-subtitle {
-    color: rgba(24,32,38,.72);
+    color: rgba(24,32,38,.75) !important;
 }
 body.light-mode .panel-index,
 html.light-mode .panel-index {
-    color: rgba(24,32,38,.72);
-    font-weight: 500;
+    color: rgba(24,32,38,.75) !important;
+    font-weight: 600 !important;
 }
 body.light-mode .field label,
 html.light-mode .field label {
-    color: rgba(24,32,38,.75);
-    font-weight: 500;
+    color: rgba(24,32,38,.78) !important;
+    font-weight: 600 !important;
 }
 body.light-mode .panel-footer,
 body.light-mode .description,
 html.light-mode .panel-footer,
 html.light-mode .description {
-    color: rgba(24,32,38,.68);
+    color: rgba(24,32,38,.68) !important;
 }
 
 body.light-mode .search-wrapper,
@@ -2391,23 +2391,43 @@ html.light-mode .select-wrapper::after {
 
 body.light-mode .selected-location,
 html.light-mode .selected-location {
-    border: 1px solid rgba(31, 107, 58, 0.32);
-    background: rgba(31, 107, 58, 0.08);
+    border: 1px solid rgba(31, 107, 58, 0.38) !important;
+    background: rgba(31, 107, 58, 0.09) !important;
+    box-shadow: 0 1px 4px rgba(31, 107, 58, 0.08);
 }
 body.light-mode .location-status,
 html.light-mode .location-status {
-    color: #1f6b3a;
-    font-weight: 600;
+    color: #1f6b3a !important;
+    font-weight: 700 !important;
+    font-size: 8px !important;
+    letter-spacing: 0.14em !important;
 }
 body.light-mode .location-dot,
 html.light-mode .location-dot {
-    background: #1f6b3a;
-    box-shadow: 0 0 8px rgba(31, 107, 58, 0.45);
+    background: #1f6b3a !important;
+    box-shadow: 0 0 8px rgba(31, 107, 58, 0.6) !important;
 }
 body.light-mode .location-name,
 html.light-mode .location-name {
-    color: #11161a;
-    font-weight: 600;
+    color: #11161a !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+}
+
+body.light-mode .launch-button,
+html.light-mode .launch-button {
+    background: #11161a !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(17, 22, 26, 0.25) !important;
+}
+body.light-mode .launch-button:hover,
+html.light-mode .launch-button:hover {
+    background: #000000 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+body.light-mode .launch-button::before,
+html.light-mode .launch-button::before {
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 body.light-mode .corner::before,
